@@ -102,7 +102,7 @@ begin
 
     Worksheet.Paste;
     LogoShape := Worksheet.Pictures(Worksheet.Pictures.Count);
-    LogoShape.Left := Worksheet.Cells[1, 4].Left;
+    LogoShape.Left := Worksheet.Cells[1, 3].Left;
     LogoShape.Top := Worksheet.Cells[1, 2].Top;
     LogoShape.Width := 100;
     LogoShape.Height := 40;
@@ -299,7 +299,6 @@ begin
     // === HEADERS ===
 
     InsertLogoToExcel(Worksheet);  // 👈 Add this line
-
 
     Worksheet.Cells[1, 1] := 'บริษัท นิฟโก้ (ไทยแลนด์) จำกัด';
     Worksheet.Range[Worksheet.Cells[1, 1], Worksheet.Cells[1, 3 + MachineList.Count + 2]].Merge;
@@ -604,6 +603,15 @@ begin
       WorkerTable.Next;
     end;
 
+    if not MemTable.Active then
+      MemTable.Open;
+
+    if MemTable.IsEmpty then
+    begin
+      ShowMessage('No data found for NewMold.');
+      Exit;
+    end;
+
     // Map usage
     MoldDict := TMoldDict.Create;
     MemTable.First;
@@ -889,7 +897,7 @@ begin
     'FROM jisekidata jd ' +
     'INNER JOIN seizomst sm ON jd.seizono = sm.seizono ' +
     'INNER JOIN tantomst tm ON jd.tantocd = tm.tantocd ' +
-    'WHERE tm.tantogrcd = ''MT'' and keikoteicd = ''OH'' ' +
+    'WHERE tm.tantogrcd = ''MT'' AND keikoteicd = ''OH'' ' +
     '  AND jd.ymds <= TO_DATE(''' + EndDateStr + ''', ''YYYY/MM/DD'') ' +
     '  AND jd.ymde >= TO_DATE(''' + StartDateStr + ''', ''YYYY/MM/DD'') ' +
     '  AND sm.seizono IS NOT NULL ' +
@@ -925,11 +933,23 @@ begin
     else
     begin
       ResultMessage := DataModuleCIMT.FetchDataFromREST(SQLText, MemTable);
-      if ResultMessage <> 'Success' then Exit;
+      if ResultMessage <> 'Success' then
+      begin
+        ShowMessage('Data fetch error: ' + ResultMessage);
+        Exit;
+      end;
     end;
 
-    MoldDict := TMoldDict.Create;
+    if MemTable.IsEmpty then
+    begin
+      ShowMessage('No data found for OVERHAUL.');
+      Exit;
+    end;
+
+    // ✅ ตอนนี้ปลอดภัยที่จะ MemTable.First ได้
     MemTable.First;
+
+    MoldDict := TMoldDict.Create;
     while not MemTable.Eof do
     begin
       MoldNo := MemTable.FieldByName('MoldNo').AsString;
@@ -1241,8 +1261,28 @@ begin
       if ResultMessage <> 'Success' then Exit;
     end;
 
-    MoldDict := TMoldDict.Create;
+    if FIsUseRESTAPIState = tssOff then
+      DataModuleCIMT.FetchDataFromOracle(SQLText, MemTable)
+    else
+    begin
+      ResultMessage := DataModuleCIMT.FetchDataFromREST(SQLText, MemTable);
+      if ResultMessage <> 'Success' then
+      begin
+        ShowMessage('Data fetch error: ' + ResultMessage);
+        Exit;
+      end;
+    end;
+
+    if MemTable.IsEmpty then
+    begin
+      ShowMessage('No data found for Cleaning.');
+      Exit;
+    end;
+
+    // ✅ ตอนนี้ปลอดภัยที่จะ MemTable.First ได้
     MemTable.First;
+
+    MoldDict := TMoldDict.Create;
     while not MemTable.Eof do
     begin
       MoldNo := MemTable.FieldByName('MoldNo').AsString;
