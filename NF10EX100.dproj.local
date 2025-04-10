@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/08/20 10:50:38.000.045,=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2024/08/20 10:52:27.000.738,C:\Users\User\Documents\Embarcadero\Studio\Projects\MainForm.dfm=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2024/08/20 10:52:27.000.738,C:\Users\User\Documents\Embarcadero\Studio\Projects\MainForm.pas=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2024/08/20 10:53:22.000.282,C:\dev\DELPHI\CIM\ProjectTemplate\MainForm.dfm=C:\Users\User\Documents\Embarcadero\Studio\Projects\MainForm.dfm</Transaction>
+    <Transaction>2024/08/20 10:53:22.000.282,C:\dev\DELPHI\CIM\ProjectTemplate\MainForm.pas=C:\Users\User\Documents\Embarcadero\Studio\Projects\MainForm.pas</Transaction>
+    <Transaction>2024/08/20 10:53:47.000.763,C:\dev\DELPHI\CIM\ProjectTemplate\ProjectTemplate.dproj=C:\Users\User\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2024/08/20 10:53:58.000.088,=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 10:54:49.000.832,C:\dev\DELPHI\CIM\ProjectTemplate\UDataModule.pas=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 10:54:49.000.832,C:\dev\DELPHI\CIM\ProjectTemplate\UDataModule.dfm=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.dfm</Transaction>
+    <Transaction>2024/08/20 10:54:59.000.078,=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 10:55:13.000.673,C:\dev\DELPHI\CIM\ProjectTemplate\UBusinessLogic.pas=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 10:55:24.000.936,=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 10:55:36.000.375,C:\dev\DELPHI\CIM\ProjectTemplate\UConfigManager.pas=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 10:56:02.000.936,=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 10:56:30.000.673,C:\dev\DELPHI\CIM\ProjectTemplate\SettingForm.dfm=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.dfm</Transaction>
+    <Transaction>2024/08/20 10:56:30.000.673,C:\dev\DELPHI\CIM\ProjectTemplate\SettingForm.pas=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/21 16:20:52.000.168,C:\dev\DELPHI\CIM\ProjectTemplate\UConfigManager.pas=</Transaction>
+    <Transaction>2024/08/22 08:45:13.000.524,C:\dev\DELPHI\CIM\ProjectTemplate\UBusinessLogic.pas=</Transaction>
+    <Transaction>2024/08/22 08:45:23.000.996,=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/22 08:48:19.000.628,=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/22 08:48:34.000.250,C:\dev\DELPHI\CIM\ProjectTemplate\DetailForm.pas=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.pas</Transaction>
+    <Transaction>2024/08/22 08:48:34.000.250,C:\dev\DELPHI\CIM\ProjectTemplate\DetailForm.dfm=C:\dev\DELPHI\CIM\ProjectTemplate\Unit1.dfm</Transaction>
+    <Transaction>2025/03/21 13:51:58.000.942,C:\Users\CIMT-North\Documents\Embarcadero\Studio\Projects\NIFCO\NC10EX100\NC10EX100\NF10EX100.dproj=C:\Users\CIMT-North\Documents\Embarcadero\Studio\Projects\NIFCO\NC10EX100\NC10EX100\ProjectTemplate.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
